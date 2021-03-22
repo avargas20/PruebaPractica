@@ -1,0 +1,29 @@
+<div>
+    <form [formGroup]="myForm" (ngSubmit)="submit()">
+        <div class="row">
+            <label class="btn btn-default p-0">
+                <input formControlName="file" type="file" class="form-control-file"
+                    (change)="onFileChange($event)">
+            </label>
+        </div>
+        <div class="row">
+            <button class="btn btn-primary" type="submit">Procesar</button>
+        </div>
+    </form>
+</div>
+<br>
+<div *ngIf="rows">
+    <table class="table">
+        <tr>
+            <th scope="col">Hora</th>
+            <th scope="col">Minutos</th>
+            <th scope="col">Resultado</th>
+        </tr>
+        <tr *ngFor="let row of rows">
+            <td>{{row.hora}}</td>
+            <td>{{row.minutos}}</td>
+            <td>{{row.resultado}}</td>
+        </tr>
+    </table>
+</div>
+
